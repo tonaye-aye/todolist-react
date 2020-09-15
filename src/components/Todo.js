@@ -55,15 +55,6 @@ export default function Todo({ text, todo, todos, setTodos }) {
     );
   };
 
-  // swap icon when it is checked/unchecked
-  const SwapIcon = () => {
-    const isChecked = todo.completed;
-    if (isChecked) {
-      return <ClearOutlinedIcon />;
-    }
-    return <DoneIcon />;
-  };
-
   // return template JSX
   return (
     <Card className={classes.root}>
@@ -84,7 +75,7 @@ export default function Todo({ text, todo, todos, setTodos }) {
           color="primary"
           onClick={completeHandler}
         >
-          <SwapIcon />
+          {todo.completed ? <ClearOutlinedIcon /> : <DoneIcon />}
         </Button>
         <Button variant="contained" color="secondary" onClick={deleteHandler}>
           <DeleteOutlineIcon />
