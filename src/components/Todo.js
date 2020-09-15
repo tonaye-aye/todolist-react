@@ -10,7 +10,8 @@ import Typography from "@material-ui/core/Typography";
 
 // icons
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-import CheckIcon from "@material-ui/icons/Check";
+import DoneIcon from "@material-ui/icons/Done";
+import ClearOutlinedIcon from "@material-ui/icons/ClearOutlined";
 
 // custom Material UI styles
 const useStyles = makeStyles({
@@ -24,6 +25,9 @@ const useStyles = makeStyles({
   todoText: {
     textDecoration: "line-through",
     opacity: "0.5"
+  },
+  buttonChecked: {
+    opacity: ".5"
   }
 });
 
@@ -36,7 +40,8 @@ export default function Todo({ text, todo, todos, setTodos }) {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
   // complete handler for todo items
-  const completeHandler = () => {
+  const completeHandler = (e) => {
+    console.log(e);
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
@@ -48,6 +53,15 @@ export default function Todo({ text, todo, todos, setTodos }) {
         return item;
       })
     );
+  };
+
+  // swap icon when it is checked/unchecked
+  const SwapIcon = () => {
+    const isChecked = todo.completed;
+    if (isChecked) {
+      return <ClearOutlinedIcon />;
+    }
+    return <DoneIcon />;
   };
 
   // return template JSX
@@ -63,8 +77,14 @@ export default function Todo({ text, todo, todos, setTodos }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" color="primary" onClick={completeHandler}>
-          <CheckIcon />
+        <Button
+          className={`${todo.completed ? classes.buttonChecked : ""}`}
+          value="balls"
+          variant="contained"
+          color="primary"
+          onClick={completeHandler}
+        >
+          <SwapIcon />
         </Button>
         <Button variant="contained" color="secondary" onClick={deleteHandler}>
           <DeleteOutlineIcon />
