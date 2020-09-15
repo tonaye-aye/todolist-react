@@ -13,6 +13,9 @@ const useStyles = makeStyles({
   formContainer: {
     display: "flex",
     margin: "1rem 0 3rem 0"
+  },
+  inputContainer: {
+    width: "100%"
   }
 });
 
@@ -38,20 +41,15 @@ export default function Form({ inputText, setInputText, todos, setTodos }) {
   return (
     <form className={classes.formContainer}>
       <TextField
-        variant="outlined"
+        className={classes.inputContainer}
         autoFocus
+        variant="outlined"
         color="primary"
-        fullWidth="true"
         value={inputText}
         onChange={inputTextHandler}
         label="add todo item..."
       />
-      <Button
-        variant="filled"
-        color="primary"
-        onClick={submitTodoHandler}
-        type="submit"
-      >
+      <Button color="primary" onClick={submitTodoHandler} type="submit">
         <AddIcon />
       </Button>
     </form>
