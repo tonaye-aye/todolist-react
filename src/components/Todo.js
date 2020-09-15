@@ -63,21 +63,11 @@ export default function Todo({ text, todo, todos, setTodos }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={completeHandler}
-          endIcon={<CheckIcon />}
-        >
-          Done
+        <Button variant="contained" color="primary" onClick={completeHandler}>
+          <CheckIcon />
         </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={deleteHandler}
-          endIcon={<DeleteOutlineIcon />}
-        >
-          Delete
+        <Button variant="contained" color="secondary" onClick={deleteHandler}>
+          <DeleteOutlineIcon />
         </Button>
       </CardActions>
     </Card>
