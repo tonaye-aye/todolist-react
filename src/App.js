@@ -50,7 +50,7 @@ export default function App() {
       <CssBaseline />
       <Nav value={value} setStatus={setStatus} setValue={setValue} />
       <Container maxWidth="md">
-        <Typography variant="h1" gutterBottom align="center" color="primary">
+        <Typography variant="h4" gutterBottom align="center" color="primary">
           Todo list
         </Typography>
         <Form

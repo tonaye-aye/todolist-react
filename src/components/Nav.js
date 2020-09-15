@@ -13,7 +13,7 @@ import NotInterestedIcon from "@material-ui/icons/NotInterested";
 // custom Material UI styles
 const useStyles = makeStyles({
   topbar: {
-    margin: "0 0 3rem 0",
+    margin: "0 0 2rem 0",
     borderBottom: "1px solid silver"
   }
 });
