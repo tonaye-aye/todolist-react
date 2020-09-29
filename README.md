@@ -1,3 +1,7 @@
-## Todo list - in react
+# Todo list - React
 
-Simple list builder thingy in react
+A streamlined todo list built in React amnd designed with Material UI.
+
+[Demo](https://oph8m.csb.app/)
+
+[More projects](https://devtones.me)
