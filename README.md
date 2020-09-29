@@ -2,6 +2,6 @@
 
 A streamlined todo list built in React amnd designed with Material UI.
 
-[Demo](https://oph8m.csb.app/)
+[Demo](https://todolist-react-two.vercel.app/)
 
 [More projects](https://devtones.me)
